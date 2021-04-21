@@ -9,12 +9,10 @@ const refs = {
 const cardsMarkup = createGalleryMarkup(galleryList);
 refs.gallery.insertAdjacentHTML("beforeend", cardsMarkup);
 
-// Слушатели
 refs.gallery.addEventListener("click", toOpenModal);
 refs.modal.addEventListener("click", closeModal);
 window.addEventListener("keydown", onButtonKey);
 
-// Разметка
 function createGalleryMarkup(galleryList) {
   return galleryList
     .map(({ preview, original, description }) => {
@@ -36,7 +34,6 @@ function createGalleryMarkup(galleryList) {
     .join("");
 }
 
-// Модальное окно. Ивенты по открытию и закрытию
 function toOpenModal(event) {
   if (!event.target.classList.contains("gallery__image")) {
     return;
